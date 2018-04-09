@@ -21,12 +21,13 @@ class CompanyBrowser extends Component {
                 if (x < y) {return -1;}
                 if (x > y) {return 1;}
                 return 0;
-            this.setState({companies: sortedCompanies});
         })
         .catch(error => {
             alert('Error with api call ... error=' + error);
         });
-            
+        
+        this.setState({companies: sortedCompanies});
+
         });
     }
     
