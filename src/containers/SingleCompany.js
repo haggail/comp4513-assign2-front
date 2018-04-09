@@ -48,11 +48,11 @@ class SingleCompany extends Component {
                                 }
                         </div>
                         <hr/>
-                        <h4 className="title is-4">{this.state.stock.name}</h4>
-                        <p>Symbol: {this.state.stock.symbol}</p>
-                        <p>Sector: {this.state.stock.sector}</p>
-                        <p>Sub-Industry: {this.state.stock.subIndustry}</p>
-                        <p>Address: {this.state.stock.address}</p>*/
+                        <h4 className="title is-4">{this.state.foundCompany.name}</h4>
+                        <p>Symbol: {this.state.foundCompany.symbol}</p>
+                        <p>Sector: {this.state.foundCompany.sector}</p>
+                        <p>Sub-Industry: {this.foundCompany.stock.subIndustry}</p>
+                        <p>Address: {this.state.foundCompany.CIK}</p>*/
                     </section>
                 </article>
             </div>
