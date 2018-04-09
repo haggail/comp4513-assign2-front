@@ -6,7 +6,7 @@ class SingleCompany extends Component {
     constructor(props) {
         super(props);
         this.state={
-            foundData: [],
+            foundData: 0,
             path: ["Home", "Companies", "Single Company"]
         }
     }
