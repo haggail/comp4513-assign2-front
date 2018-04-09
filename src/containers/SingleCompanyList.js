@@ -1,67 +1,66 @@
-/*import React, { Component } from 'react';
-import SingleUserAddress from '../containers/SingleUserAddress.js';
-import SingleUserCompany from '../containers/SingleUserCompany.js';
+import React, { Component } from 'react';
+import SingleUserPortfolioItem from '../containers/SingleUserPortfolioItem.js';
 
-class SingleUserDetails extends Component {
+import axios from 'axios';
+
+class SingleCompanyList extends Component {
     constructor(props) {
         super(props);
-        this.state = {user: props.singleUser, showAdd: false, showCom: false};
+        this.state = {
+            company: props.singleCompany,
+            monthlyPrices: [],
+            month: null
+        }
     }
     
-    showAddress() {
-        this.setState({showAdd: !this.state.showAdd});
+    getData() {
+        axios.get('https://wiggly-kitty-services.herokuapp.com/api/prices/monthly/AMZN/01' + this.props.match.params.id + '/' + this.state.month)
+        .then(response => {
+            this.setState({monthlyPrices: response.data});
+        })
+        .catch(error => {
+            alert('Error with api call ... error=' + error);
+        });
     }
     
-    showCompany() {
-        this.setState({showCom: !this.state.showCom});
+    getMonth(selected) {
+        this.setState({month: selected.target.value})
+        
     }
+    
     
     render() {
         return (
             <section className="section is-paddingless">
-                <p className="subtitle is-6">ID: {this.state.user.id} <br/>
-                                            Email: {this.state.user.email} <br/>
-                                            Phone: {this.state.user.phone} <br/>
-                                            Website: {this.state.user.website}
-                </p>
-            
-            
-                <article className="message is-primary">
-                    <div className="message-header" onClick={this.showAddress.bind(this)}>
-                        <p>Address</p>
-                            {this.state.showAdd && 
-                            <span className="icon has-text-white">
-                                <i className="fas fa-minus"/>
-                            </span>
-                            }
-                            {!this.state.showAdd && 
-                            <span className="icon has-text-white">
-                                <i className="fas fa-plus"/>
-                            </span>
-                            }
-                    </div>
-                    {this.state.showAdd ? <SingleUserAddress address={this.state.user.address} /> : null}
-                </article>
-                
-                <article className="message is-primary">
-                    <div className="message-header" onClick={this.showCompany.bind(this)}>
-                        <p>Company</p>
-                            {this.state.showCom && 
-                            <span className="icon has-text-white">
-                                <i className="fas fa-minus"/>
-                            </span>
-                            }
-                            {!this.state.showCom && 
-                            <span className="icon has-text-white">
-                                <i className="fas fa-plus"/>
-                            </span>
-                            }
-                    </div>
-                    {this.state.showCom ? <SingleUserCompany company={this.state.user.company} /> : null}
-                </article>
+            <select name='monthSelect' onChange={this.getMonth.bind(this)}>
+                <option value='01'>January</option>
+                <option value='02'>February</option>
+                <option value='03'>March</option>
+                <option value='04'>April</option>
+                <option value='05'>May</option>
+                <option value='06'>June</option>
+                <option value='07'>July</option>
+                <option value='08'>August</option>
+                <option value='09'>September</option>
+                <option value='10'>October</option>
+                <option value='11'>November</option>
+                <option value='12'>December</option>
+            </select>
+            {this.state.month != null &&
+                this.getData()
+            }
+                <table className="table is-hoverable is-fullwidth is-striped">
+                    <thead>
+                        <tr>
+                        
+                        </tr>
+                    </thead>
+                    <tbody>
+                    
+                    </tbody>
+                </table>
             </section>
-        );
-
+            );
     }
 }
-export default SingleUserDetails;*/
+export default SingleCompanyList;

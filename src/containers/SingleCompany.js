@@ -1,35 +1,34 @@
 import React, { Component } from 'react';
 import Breadcrumb from '../components/Breadcrumb.js';
+import SingleCompanyList from './SingleCompanyList.js';
+import SingleCompanySummary from './SingleCompanySummary.js';
+
 import axios from 'axios';
+import companyList from '../companies.json';
 
 class SingleCompany extends Component {
     constructor(props) {
         super(props);
         this.state={
-            foundCompany: 0,
+            foundCompany: this.findCompany(),
             path: ["Home", "Companies", "Single Company"]
         }
     }
-	
-	componentDidMount() {
-        axios.get('https://wiggly-kitty-services.herokuapp.com/api/companies/' + this.props.match.params.id)
-        .then(response => {
-            this.setState({foundCompany: response.data});
-        })
-        .catch(error => {
-            alert('Error with api call ... error=' + error);
-        });
+    
+    findCompany() {
+        let foundComp = companyList.find(n=>n.symbol === this.props.match.params.id);
+        return foundComp;
     }
 	
-	summaryDisplay=()=> {
+	listDisplay=()=> {
         this.setState({
-           summaryDisplay: true
+           listTab: true
         });
     }
     
-    listDisplay=()=> {
+    summaryDisplay=()=> {
         this.setState({
-           summaryDisplay: false
+           listTab: false
         });
     }
     
@@ -41,18 +40,18 @@ class SingleCompany extends Component {
                     <section className="column is-three-fifths is-offset-one-fifth has-text-centered">
                         <img className="company-image" src={'/logos/' + this.state.foundCompany.symbol + '.svg'} alt="Company Symbol" />
                         <div className="tabs is-centered is-medium">
-                                {this.state.summaryDisplay ? 
-                                <ul> <li className="is-active" onClick={this.summaryDisplay}><a>Summary</a></li> <li onClick={this.listDisplay}><a>List</a></li> </ul>
-                                : 
+                                {this.state.listTab ? 
                                 <ul> <li onClick={this.summaryDisplay}><a>Summary</a></li> <li className="is-active" onClick={this.listDisplay}><a>List</a></li> </ul>
+                                : 
+                                <ul> <li className="is-active" onClick={this.summaryDisplay}><a>Summary</a></li> <li onClick={this.listDisplay}><a>List</a></li> </ul>
                                 }
                         </div>
-                        <hr/>
-                        <h4 className="title is-4">{this.state.foundCompany.name}</h4>
-                        <p>Symbol: {this.state.foundCompany.symbol}</p>
-                        <p>Sector: {this.state.foundCompany.sector}</p>
-                        <p>Sub-Industry: {this.state.foundCompany.subIndustry}</p>
-                        <p>Address: {this.state.foundCompany.CIK}</p>*/
+                        
+                        {this.state.listTab ?
+                            <SingleCompanyList singleCompany={this.state.foundCompany}/>
+                            :
+                            <SingleCompanySummary singleCompany={this.state.foundCompany}/>
+                            }
                     </section>
                 </article>
             </div>

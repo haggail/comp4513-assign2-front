@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
 import CompanyListItem from '../containers/CompanyListItem.js';
 import Breadcrumb from '../components/Breadcrumb.js';
-
-import axios from 'axios';
+import company from '../companies.json';
 
 class CompanyBrowser extends Component {
     constructor(props) {
         super(props);
-        this.state={companies:[], path: ["Home", "Companies"]}
+        this.state={companies: company, path: ["Home", "Companies"]}
     }
     
-    componentDidMount() {
-        axios.get('https://wiggly-kitty-services.herokuapp.com/api/companies/')
-        .then(response => {
-            let sortedCompanies = response.data;
+    sortCompanies() {
+            let sortedCompanies = this.state.company;
             sortedCompanies.sort(function(a, b){
                 var x = a.name.toLowerCase();
                 var y = b.name.toLowerCase();
@@ -22,10 +19,6 @@ class CompanyBrowser extends Component {
                 return 0;
             });
             this.setState({companies: sortedCompanies});
-        })
-        .catch(error => {
-            alert('Error with api call ... error=' + error);
-        });
     }
     
     
@@ -41,10 +34,10 @@ class CompanyBrowser extends Component {
                     <section className="column is-three-fifths is-offset-one-fifth">
                         <nav className="panel">
                             <h3 className="panel-heading">Companies</h3>
-                                {this.state.companies.map( (company) => {
+                                {this.state.companies.map( (compDetails) => {
                                 return (
-                                    <CompanyListItem key={company.symbol} identifier={company.symbol}>
-                                        {company.name}
+                                    <CompanyListItem key={compDetails.symbol} identifier={compDetails.symbol}>
+                                        {compDetails.name}
                                     </CompanyListItem>
                                 )
                             })
