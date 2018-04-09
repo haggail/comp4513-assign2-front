@@ -1,22 +1,30 @@
 import React, { Component } from 'react';
 import CompanyListItem from '../containers/CompanyListItem.js';
 import Breadcrumb from '../components/Breadcrumb.js';
-import company from '../companies.json';
 
 class CompanyBrowser extends Component {
     constructor(props) {
         super(props);
-        this.state={companies: company, path: ["Home", "Companies"]}
+        this.state={companies: [], path: ["Home", "Companies"]}
     }
     
-    sortCompanies() {
-            let sortedCompanies = this.state.company;
+    
+    componentDidMount() {
+        axios.get('https://wiggly-kitty-services.herokuapp.com/api/companies')
+        .then(response => {
+            let sortedCompanies = response.data;
             sortedCompanies.sort(function(a, b){
                 var x = a.name.toLowerCase();
                 var y = b.name.toLowerCase();
                 if (x < y) {return -1;}
                 if (x > y) {return 1;}
                 return 0;
+            this.setState({companies: sortedCompanies});
+        })
+        .catch(error => {
+            alert('Error with api call ... error=' + error);
+        });
+            
             });
             this.setState({companies: sortedCompanies});
     }
