@@ -51,7 +51,7 @@ class SingleCompany extends Component {
                         <h4 className="title is-4">{this.state.foundCompany.name}</h4>
                         <p>Symbol: {this.state.foundCompany.symbol}</p>
                         <p>Sector: {this.state.foundCompany.sector}</p>
-                        <p>Sub-Industry: {this.foundCompany.stock.subIndustry}</p>
+                        <p>Sub-Industry: {this.state.foundCompany.subIndustry}</p>
                         <p>Address: {this.state.foundCompany.CIK}</p>*/
                     </section>
                 </article>
