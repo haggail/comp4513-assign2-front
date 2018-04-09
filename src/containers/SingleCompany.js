@@ -24,15 +24,16 @@ class SingleCompany extends Component {
         });
     }
 	
-	listDisplay=()=> {
+		
+	summaryDisplay=()=> {
         this.setState({
-           listTab: true
+           summaryTab: true
         });
     }
     
-    summaryDisplay=()=> {
+    listDisplay=()=> {
         this.setState({
-           listTab: false
+           summaryTab: false
         });
     }
     
@@ -44,17 +45,17 @@ class SingleCompany extends Component {
                     <section className="column is-three-fifths is-offset-one-fifth has-text-centered">
                         <img className="company-image" src={'/logos/' + this.state.foundCompany.symbol + '.svg'} alt="Company Symbol" />
                         <div className="tabs is-centered is-medium">
-                                {this.state.listTab ? 
-                                <ul> <li onClick={this.summaryDisplay}><a>Summary</a></li> <li className="is-active" onClick={this.listDisplay}><a>List</a></li> </ul>
-                                : 
+                                {this.state.summaryTab ? 
                                 <ul> <li className="is-active" onClick={this.summaryDisplay}><a>Summary</a></li> <li onClick={this.listDisplay}><a>List</a></li> </ul>
+                                : 
+                                <ul> <li onClick={this.summaryDisplay}><a>Summary</a></li> <li className="is-active" onClick={this.listDisplay}><a>List</a></li> </ul>
                                 }
                         </div>
                         
-                        {this.state.listTab ?
-                            <SingleCompanyList singleCompany={this.state.foundCompany}/>
-                            :
+                        {this.state.summaryTab ?
                             <SingleCompanySummary singleCompany={this.state.foundCompany}/>
+                            :
+                            <SingleCompanyList singleCompany={this.state.foundCompany}/>
                             }
                     </section>
                 </article>
