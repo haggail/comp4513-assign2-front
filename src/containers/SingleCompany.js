@@ -4,20 +4,24 @@ import SingleCompanyList from './SingleCompanyList.js';
 import SingleCompanySummary from './SingleCompanySummary.js';
 
 import axios from 'axios';
-import companyList from '../companies.json';
 
 class SingleCompany extends Component {
     constructor(props) {
         super(props);
         this.state={
-            foundCompany: this.findCompany(),
+            foundCompany: [],
             path: ["Home", "Companies", "Single Company"]
         }
     }
     
-    findCompany() {
-        let foundComp = companyList.find(n=>n.symbol === this.props.match.params.id);
-        return foundComp;
+    componentDidMount() {
+        axios.get('https://wiggly-kitty-services.herokuapp.com/api/companies/' + this.props.params.match.id)
+        .then(response => {
+            this.setState({foundCompany: response.data});
+        })
+        .catch(error => {
+            alert('Error with api call ... error=' + error);
+        });
     }
 	
 	listDisplay=()=> {

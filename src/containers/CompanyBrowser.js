@@ -25,8 +25,7 @@ class CompanyBrowser extends Component {
             alert('Error with api call ... error=' + error);
         });
             
-            });
-            this.setState({companies: sortedCompanies});
+        });
     }
     
     
