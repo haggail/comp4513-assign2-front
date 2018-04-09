@@ -47,14 +47,7 @@ class SingleCompany extends Component {
                                 <ul> <li onClick={this.summaryDisplay}><a>Summary</a></li> <li className="is-active" onClick={this.listDisplay}><a>List</a></li> </ul>
                                 }
                         </div>
-                         /*   
-						{this.state.summaryDisplay ?
-						<SingleCompanySummary singleCompany={this.state.foundCompany}/>
-						:
-						<SingleCompanyList singleCompany={this.state.foundCompany}/>
-						}*/
-						
-						/*<hr/>
+                        <hr/>
                         <h4 className="title is-4">{this.state.stock.name}</h4>
                         <p>Symbol: {this.state.stock.symbol}</p>
                         <p>Sector: {this.state.stock.sector}</p>
