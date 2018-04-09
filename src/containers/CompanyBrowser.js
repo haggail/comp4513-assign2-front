@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import CompanyListItem from '../containers/CompanyListItem.js';
 import Breadcrumb from '../components/Breadcrumb.js';
 
+import axios from 'axios';
+
 class CompanyBrowser extends Component {
     constructor(props) {
         super(props);
