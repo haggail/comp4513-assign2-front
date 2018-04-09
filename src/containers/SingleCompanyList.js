@@ -46,9 +46,7 @@ class SingleCompanyList extends Component {
                 <option value='11'>November</option>
                 <option value='12'>December</option>
             </select>
-            {this.state.month != null &&
-                this.getData()
-            }
+            
                 <table className="table is-hoverable is-fullwidth is-striped">
                     <thead>
                         <tr>
