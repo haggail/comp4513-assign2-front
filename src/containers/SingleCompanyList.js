@@ -12,7 +12,7 @@ class SingleCompanyList extends Component {
             month: null
         }
     }
-    
+    /*
     getData() {
         axios.get('https://wiggly-kitty-services.herokuapp.com/api/prices/monthly/AMZN/01' + this.props.match.params.id + '/' + this.state.month)
         .then(response => {
@@ -21,7 +21,7 @@ class SingleCompanyList extends Component {
         .catch(error => {
             alert('Error with api call ... error=' + error);
         });
-    }
+    }*/
     
     getMonth(selected) {
         this.setState({month: selected.target.value})
