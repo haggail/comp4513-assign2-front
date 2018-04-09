@@ -26,3 +26,19 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.company-image {
+  width: 250px;
+  max-width: 400px;
+}
+
+.company-thumbnail {
+  width: 200px;
+  max-width: 100px;
+  padding-right:2em;
+}
+
+.kitty-size {
+  width: 250px;
+  max-width: 400px;
+}
