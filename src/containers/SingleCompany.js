@@ -12,7 +12,7 @@ class SingleCompany extends Component {
     }
 	
 	componentDidMount() {
-        axios.get('https://wiggly-kitties-services.herokuapp.com/api/companies/' + this.props.match.params.id)
+        axios.get('https://wiggly-kitty-services.herokuapp.com/api/companies/' + this.props.match.params.id)
         .then(response => {
             this.setState({foundCompany: response.data});
         })

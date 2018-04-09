@@ -11,7 +11,7 @@ class CompanyBrowser extends Component {
     }
     
     componentDidMount() {
-        axios.get('https://wiggly-kitties-services.herokuapp.com/api/companies/')
+        axios.get('https://wiggly-kitty-services.herokuapp.com/api/companies/')
         .then(response => {
             let sortedCompanies = response.data;
             sortedCompanies.sort(function(a, b){
