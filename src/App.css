@@ -38,7 +38,17 @@
   padding-right:2em;
 }
 
+.name-padding {
+  padding-left:2em;
+}
+
 .kitty-size {
   width: 250px;
   max-width: 400px;
+}
+
+.login-box {
+    margin: auto;
+    max-width: 50%;
+    padding-top: 20%;
 }

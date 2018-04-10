@@ -11,7 +11,7 @@ const HeaderBar = (props) => {
                     </span>
                 </NavLink>
                 <NavLink className="navbar-item" to={ {pathname:"/home"}} href="">
-                    <h1 className="title">Assignment 1</h1>
+                    <h1 className="title">Assignment 2</h1>
                 </NavLink>
                 <div className="navbar-burger" onClick={()=>
                     document.querySelector('.navbar-menu').classList.toggle('is-active')

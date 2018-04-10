@@ -21,6 +21,7 @@ class AboutUs extends Component {
                         <h5 className="subtitle is-5">COMP 4513: Assignment 2</h5>
                         <br/>
                         <p>Tech and Code:</p>
+                        <p>React Linechart: <a href='https://www.npmjs.com/package/react-linechart'>npmjs</a></p>
                         <p>Bulma documentation: <a href="https://bulma.io/documentation/overview/start/">Bulma</a></p>
                         <p>Array sort functions: <a href="https://www.w3schools.com/js/js_array_sort.asp">W3Schools</a></p>
                         <p>Expression embedding: <a href="https://reactjs.org/docs/conditional-rendering.html">React JS</a></p>
