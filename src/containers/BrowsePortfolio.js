@@ -3,12 +3,12 @@ import Breadcrumb from '../components/Breadcrumb.js';
 import BrowsePortfolioSummary from './BrowsePortfolioSummary.js';
 import BrowsePortfolioList from './BrowsePortfolioList.js';
 
-import axios from 'axios';
 
 class BrowsePortfolio extends Component {
     constructor(props) {
         super(props);
         this.state={
+            userid: 70,
             summaryTab: true,
             path: ["Home", "Browse Portfolio"]
         }
@@ -40,9 +40,9 @@ class BrowsePortfolio extends Component {
                                 }
                         </div>
                         {this.state.summaryTab ?
-                            <BrowsePortfolioSummary singleCompany= {this.state.foundCompany} />
+                            <BrowsePortfolioSummary user= {this.state.userid} />
                             :
-                            <BrowsePortfolioList singleCompany={this.state.foundCompany} />
+                            <BrowsePortfolioList user={this.state.userid} />
                             }
                     </section>
                 </article>

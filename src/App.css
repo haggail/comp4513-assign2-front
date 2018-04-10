@@ -53,6 +53,7 @@
     padding-top: 20%;
 }
 
-.left-pad {
-    padding-left: 10em
+.pie-container {
+    margin: auto;
+    max-width: 50%;
 }

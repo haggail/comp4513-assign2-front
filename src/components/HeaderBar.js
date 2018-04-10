@@ -28,7 +28,8 @@ const HeaderBar = (props) => {
                             <a className="navbar-link">Menu</a>
                             <div className="navbar-dropdown is-right">
                                 <NavLink className="navbar-item" to={ {pathname:"/home"}} href="">Home</NavLink>
-                                <NavLink className="navbar-item" to={ {pathname:"/companies"}} href="">Users</NavLink>
+                                <NavLink className="navbar-item" to={ {pathname:"/portolio"}} href="">Portfolio</NavLink>
+                                <NavLink className="navbar-item" to={ {pathname:"/companies"}} href="">Companies</NavLink>
                                 <NavLink className="navbar-item" to={ {pathname:"/visualizer"}} href="">Stocks</NavLink>
                                 <NavLink className="navbar-item" to={ {pathname:"/about"}} href="">About Us</NavLink>
                                 <NavLink className="navbar-item" to={ {pathname:"/login"}} onClick={props.logout} href="">Logout</NavLink>
