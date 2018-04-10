@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import SingleCompanySummaryChart from '../containers/SingleCompanySummaryChart.js';
 import axios from 'axios';
 
-class SingleCompanySummary extends Component {
+class BrowsePortfolioSummary extends Component {
     constructor(props) {
         super(props);
         this.state = {company: props.singleCompany, load: props.loaded};
@@ -34,10 +33,9 @@ class SingleCompanySummary extends Component {
                         Address: {this.state.company[0].address} <br/>
                     </p>
 
-                    <SingleCompanySummaryChart data={this.state.averages}/>
                 </section>
             );
         }
 }
 
-export default SingleCompanySummary;
+export default BrowsePortfolioSummary;

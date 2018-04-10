@@ -5,26 +5,43 @@ import axios from 'axios';
 class Login extends Component {
     constructor(props) {
         super(props);
-        this.state={user: '', pw: ''}
+        this.state={user: '', pw: '', goodUser: false}
     }
     
     handleUserChange(event) {
         this.setState({user: event.target.value})
+        this.setState({badLogin: false})
     }
     
     handlePwChange(event) {
         this.setState({pw: event.target.value})
+        this.setState({badLogin: false})
     }
     
     handleLogin(event) {
         event.preventDefault()
-        var testUser = {user: this.state.user};
-        console.log(testUser)
-        axios.post(`https://wiggly-kitty-services.herokuapp.com/api/users/`, { testUser })
+        var user = {user: this.state.user};
+        
+        axios.post(`https://wiggly-kitty-services.herokuapp.com/login1`, user)
         .then(response => {
-            console.log(response);
-            console.log(response.data);
+            if (response.data.length === 0) {
+                this.displayBadLogin()
+            } else {
+                var pwCheck = {pw: this.state.pw, salt: response.data[0].salt}
+                axios.post(`https://wiggly-kitty-services.herokuapp.com/login2`, pwCheck)
+                .then(response => {
+                    if (response.data.length === 0) {
+                        this.displayBadLogin()
+                    } else {
+                        //response.data = {this.props.goodAuth}
+                    }
+                })
+            }
       })
+    }
+    
+    displayBadLogin() {
+        this.setState({badLogin: true})
     }
     
     render() {
@@ -47,6 +64,11 @@ class Login extends Component {
                                     <input className="input" value={this.state.pw} id="pw" type="password" onChange={this.handlePwChange.bind(this)} />
                                 </div>
                             </div>
+                            {this.state.badLogin ?
+                                <div className='notification is-primary'>Incorrect Email or Password</div>
+                            : 
+                                <p></p>
+                            }
 
                             <div className="field">
                                 <div className="control">
