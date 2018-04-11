@@ -18,12 +18,12 @@ class AboutUs extends Component {
                         <h4 className="title is-4">Haggai Lazaro</h4>
                         <h5 className="subtitle is-5">COMP 4513: Assignment 2</h5>
                         <hr/>
-                        <p>Github:</p>
+                        <p>Github:</br>
                         <a href='https://github.com/haggail/comp4513-assign2-front'>Front End</a><br/>
                         <a href='https://github.com/haggail/comp4513-assign2-services'>Back End</a><br/>
                         <a href='https://www.mlab.com'>mLab</a><br/>
-                        <a href='https://www.heroku.com/'>Heroku</a><br/>
-                        <p>Other Tech and Code:</p>
+                        <a href='https://www.heroku.com/'>Heroku</a><br/></p>
+                        <p>Other Tech and Code:<br/>
                         Recharts: <a href='http://recharts.org/'>Recharts</a><br/>
                         Simple Pie Chart <a href='https://www.npmjs.com/package/react-simple-pie-chart'>npmjs</a><br/>
                         Bulma documentation: <a href="https://bulma.io/documentation/overview/start/">Bulma</a><br/>
