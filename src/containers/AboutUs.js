@@ -21,6 +21,7 @@ class AboutUs extends Component {
                         <p>Github:</p>
                         <a href='https://github.com/haggail/comp4513-assign2-front>'>Front End</a>
                         <a href='https://github.com/haggail/comp4513-assign2-services>'>Back End</a>
+            
                         <p>Tech and Code:</p>
                         <p>Recharts: <a href='http://recharts.org/'>Recharts</a></p>
                         <p>Bulma documentation: <a href="https://bulma.io/documentation/overview/start/">Bulma</a></p>
