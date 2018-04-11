@@ -14,7 +14,8 @@ class PortfolioPie extends Component {
                 { color: '#9B5CF0', value: 5 },
                 { color: '#D6CCE3', value: 30 },
             ]}
-    
+                        
+            />
         );
     }
 }
