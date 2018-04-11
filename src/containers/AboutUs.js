@@ -24,11 +24,11 @@ class AboutUs extends Component {
                         <a href='https://www.mlab.com'>mLab</a><br/>
                         <a href='https://www.heroku.com/'>Heroku</a><br/>
                         <p>Other Tech and Code:</p>
-                        <p>Recharts: <a href='http://recharts.org/'>Recharts</a></p><br/>
-                        <p>Simple Pie Chart <a href='https://www.npmjs.com/package/react-simple-pie-chart'>npmjs</a></p><br/>
-                        <p>Bulma documentation: <a href="https://bulma.io/documentation/overview/start/">Bulma</a></p><br/>
-                        <p>Array sort functions: <a href="https://www.w3schools.com/js/js_array_sort.asp">W3Schools</a></p><br/>
-                        <p>Expression embedding: <a href="https://reactjs.org/docs/conditional-rendering.html">React JS</a></p>
+                        Recharts: <a href='http://recharts.org/'>Recharts</a><br/>
+                        Simple Pie Chart <a href='https://www.npmjs.com/package/react-simple-pie-chart'>npmjs</a><br/>
+                        Bulma documentation: <a href="https://bulma.io/documentation/overview/start/">Bulma</a><br/>
+                        Array sort functions: <a href="https://www.w3schools.com/js/js_array_sort.asp">W3Schools</a><br/>
+                        Expression embedding: <a href="https://reactjs.org/docs/conditional-rendering.html">React JS</a></p>
                     </div>
                     
                 </article>
