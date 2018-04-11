@@ -25,7 +25,7 @@ class AboutUs extends Component {
                         <a href='https://www.heroku.com/'>Heroku><a><br/>
                         <p>Other Tech and Code:</p>
                         <p>Recharts: <a href='http://recharts.org/'>Recharts</a></p>
-                        <p>Simple Pie Chart <a href='https://www.npmjs.com/package/react-simple-pie-chart'>npmjs</a></p>
+                        <p>Simple Pie Chart <a> href='https://www.npmjs.com/package/react-simple-pie-chart'>npmjs</a></p>
                         <p>Bulma documentation: <a> href="https://bulma.io/documentation/overview/start/">Bulma</a></p>
                         <p>Array sort functions: <a> href="https://www.w3schools.com/js/js_array_sort.asp">W3Schools</a></p>
                         <p>Expression embedding: <a> href="https://reactjs.org/docs/conditional-rendering.html">React JS</a></p>
