@@ -20,15 +20,15 @@ class AboutUs extends Component {
                         <hr/>
                         <p>Github:</p>
                         <a href='https://github.com/haggail/comp4513-assign2-front'>Front End</a><br/>
-                        <a href='https://github.com/haggail/comp4513-assign2-services'>Back End</a>
-                        <a href='https://www.mlab.com'>mLab</a>
-                        <a href='https://www.heroku.com/'>Heroku></a><br/>
+                        <a href='https://github.com/haggail/comp4513-assign2-services'>Back End</a><br/>
+                        <a href='https://www.mlab.com'>mLab</a><br/>
+                        <a href='https://www.heroku.com/'>Heroku</a><br/>
                         <p>Other Tech and Code:</p>
-                        <p>Recharts: <a href='http://recharts.org/'>Recharts</a></p>
-                        <p>Simple Pie Chart <a> href='https://www.npmjs.com/package/react-simple-pie-chart'npmjs</a></p>
-                        <p>Bulma documentation: <a> href="https://bulma.io/documentation/overview/start/">Bulma</a></p>
-                        <p>Array sort functions: <a> href="https://www.w3schools.com/js/js_array_sort.asp">W3Schools</a></p>
-                        <p>Expression embedding: <a> href="https://reactjs.org/docs/conditional-rendering.html">React JS</a></p>
+                        <p>Recharts: <a href='http://recharts.org/'>Recharts</a></p><br/>
+                        <p>Simple Pie Chart <a href='https://www.npmjs.com/package/react-simple-pie-chart'>npmjs</a></p><br/>
+                        <p>Bulma documentation: <a href="https://bulma.io/documentation/overview/start/">Bulma</a></p><br/>
+                        <p>Array sort functions: <a href="https://www.w3schools.com/js/js_array_sort.asp">W3Schools</a></p><br/>
+                        <p>Expression embedding: <a href="https://reactjs.org/docs/conditional-rendering.html">React JS</a></p>
                     </div>
                     
                 </article>
