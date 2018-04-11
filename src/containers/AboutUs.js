@@ -18,6 +18,9 @@ class AboutUs extends Component {
                         <h4 className="title is-4">Haggai Lazaro</h4>
                         <h5 className="subtitle is-5">COMP 4513: Assignment 2</h5>
                         <br/>
+                        <p>Github:</p>
+                        <a href='https://github.com/haggail/comp4513-assign2-front>'>Front End</a>
+                        <a href='https://github.com/haggail/comp4513-assign2-services>'>Back End</a>
                         <p>Tech and Code:</p>
                         <p>Recharts: <a href='http://recharts.org/'>Recharts</a></p>
                         <p>Bulma documentation: <a href="https://bulma.io/documentation/overview/start/">Bulma</a></p>
